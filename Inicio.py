@@ -50,39 +50,27 @@ def get_mqtt_message(broker, port, topic, client_id):
 
 # Sidebar - Configuración
 with st.sidebar:
-    st.subheader('⚙️ Configuración de Conexión')
+    st.subheader('⚙️ Configuración para conectarse al MQTT')
     
     broker = st.text_input('Broker MQTT', value='broker.mqttdashboard.com', 
-                           help='Dirección del broker MQTT')
+                           help='Creo que es suficientemente intuitivo... no necesitas ayuda')
     
     port = st.number_input('Puerto', value=1883, min_value=1, max_value=65535,
-                           help='Puerto del broker (generalmente 1883)')
+                           help='1883')
     
-    topic = st.text_input('Tópico', value='Sensor/THP2',
-                          help='Tópico MQTT a suscribirse')
+    topic = st.text_input('Tópico', value='Sensor/THP5',
+                          help='Este es el topico, duh')
     
     client_id = st.text_input('ID del Cliente', value='streamlit_client',
-                              help='Identificador único para este cliente')
+                              help='Identificador único para este cliente, que no sea el mismo del wokwi')
 
 # Título
-st.title('📡 Lector de Sensor MQTT')
+st.title('📡 Recibire tu información MQTT y te la dire')
 
 # Información al inicio
 with st.expander('ℹ️ Información', expanded=False):
-    st.markdown("""
-    ### Cómo usar esta aplicación:
     
-    1. **Broker MQTT**: Ingresa la dirección del servidor MQTT en el sidebar
-    2. **Puerto**: Generalmente es 1883 para conexiones no seguras
-    3. **Tópico**: El canal al que deseas suscribirte
-    4. **ID del Cliente**: Un identificador único para esta conexión
-    5. Haz clic en **Obtener Datos** para recibir el mensaje más reciente
-    
-    ### Brokers públicos para pruebas:
-    - broker.mqttdashboard.com
-    - test.mosquitto.org
-    - broker.hivemq.com
-    """)
+
 
 st.divider()
 
