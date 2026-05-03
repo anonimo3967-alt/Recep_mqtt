@@ -76,7 +76,7 @@ with st.expander('Expande aqui para encontrar algo inesperado', expanded=False):
 st.divider()
 
 # Botón para obtener datos
-if st.button('🔄 Obtener Datos del Sensor', use_container_width=True):
+if st.button('Obten tus preciosos datos aquí', use_container_width=True):
     with st.spinner('Conectando al broker y esperando datos...'):
         sensor_data = get_mqtt_message(broker, int(port), topic, client_id)
         st.session_state.sensor_data = sensor_data
@@ -84,7 +84,7 @@ if st.button('🔄 Obtener Datos del Sensor', use_container_width=True):
 # Mostrar resultados
 if st.session_state.sensor_data:
     st.divider()
-    st.subheader('📊 Datos Recibidos')
+    st.subheader('Esto es lo que recibi mediante conexión satelital')
     
     data = st.session_state.sensor_data
     
@@ -92,7 +92,7 @@ if st.session_state.sensor_data:
     if isinstance(data, dict) and 'error' in data:
         st.error(f"❌ Error de conexión: {data['error']}")
     else:
-        st.success('✅ Datos recibidos correctamente')
+        st.success('✅ Woah, funciono... Quien lo diria')
         
         # Mostrar datos en formato JSON
         if isinstance(data, dict):
