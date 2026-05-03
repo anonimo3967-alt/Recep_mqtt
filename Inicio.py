@@ -69,6 +69,7 @@ st.title('📡 Recibire tu información MQTT y te la dire')
 
 # Información al inicio
 with st.expander('ℹ️ Información', expanded=False):
+    st.image("Chad_Face.webp")
     
 
 
