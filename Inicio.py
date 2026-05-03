@@ -68,7 +68,7 @@ with st.sidebar:
 st.title('📡 Recibire tu información MQTT y te la dire')
 
 # Información al inicio
-with st.expander('ℹ️ Información', expanded=False):
+with st.expander('Expande aqui para encontrar algo inesperado', expanded=False):
     st.image("Chad_Face.webp")
     
 
